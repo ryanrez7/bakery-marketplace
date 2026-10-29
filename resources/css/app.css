@@ -2,6 +2,7 @@
 @import '../../vendor/livewire/flux/dist/flux.css';
 
 @source '../views';
+@source '../../app/Modules';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
 @source '../../vendor/livewire/flux/stubs/**/*.blade.php';
@@ -45,6 +46,13 @@
     ::file-selector-button {
         border-color: var(--color-gray-200, currentColor);
     }
+}
+
+@theme {
+    --color-coklat: #4a3426;
+    --color-coklat-tua: #3b2a1e;
+    --color-krem: #f3e7d3;
+    --color-krem-tua: #e6d3b5;
 }
 
 [data-flux-field]:not(ui-radio, ui-checkbox) {
