@@ -3,23 +3,29 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        $akun = [
+            ['name' => 'Admin Bakery', 'email' => 'admin@bakery.test', 'role' => 'admin'],
+            ['name' => 'Outlet Demo', 'email' => 'outlet@bakery.test', 'role' => 'outlet'],
+        ];
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        foreach ($akun as $row) {
+            // forceFill: kolom role/status tidak ada di $fillable, jadi diisi paksa
+            User::firstOrNew(['email' => $row['email']])
+                ->forceFill([
+                    'name' => $row['name'],
+                    'role' => $row['role'],
+                    'status' => 'active',
+                    'password' => Hash::make('password'),
+                    'email_verified_at' => now(),
+                ])
+                ->save();
+        }
     }
 }
