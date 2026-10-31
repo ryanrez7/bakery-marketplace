@@ -79,4 +79,12 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     {
         return $this->status === 'active';
     }
+    public function homeUrl(): string
+{
+    return match ($this->role) {
+        'admin' => '/admin/dashboard',
+        'outlet' => '/outlet/dashboard',
+        default => '/dashboard',
+    };
+}
 }

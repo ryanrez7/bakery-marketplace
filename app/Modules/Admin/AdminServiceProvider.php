@@ -2,12 +2,18 @@
 
 namespace App\Modules\Admin;
 
-use App\Modules\ModuleServiceProvider;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\ServiceProvider;
 
-final class AdminServiceProvider extends ModuleServiceProvider
+class AdminServiceProvider extends ServiceProvider
 {
-    protected function moduleAlias(): string
+    public function boot(): void
     {
-        return 'admin';
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'admin');
+
+        Route::middleware(['web', 'auth', 'role:admin'])
+            ->prefix('admin')
+            ->name('admin.')
+            ->group(__DIR__.'/routes/admin.php');
     }
 }

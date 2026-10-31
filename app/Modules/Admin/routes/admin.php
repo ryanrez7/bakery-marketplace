@@ -1,9 +1,8 @@
 <?php
 
 use App\Modules\Admin\Http\Controllers\AdminDashboardController;
-use App\Support\Routing\PortalRoutes;
+use App\Modules\Admin\Http\Controllers\AdminKomisiController;
 use Illuminate\Support\Facades\Route;
 
-PortalRoutes::admin(function () {
-    Route::get('/dashboard', AdminDashboardController::class)->name('dashboard');
-});
+Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+Route::get('/komisi', [AdminKomisiController::class, 'index'])->name('komisi');
