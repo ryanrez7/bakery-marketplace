@@ -16,7 +16,6 @@ use Laravel\Fortify\PasskeyAuthenticatable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 
-
 /**
  * @property int $id
  * @property string $name
@@ -34,9 +33,11 @@ use Laravel\Sanctum\HasApiTokens;
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
 class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
 {
+    use HasApiTokens;
+
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
-    use HasApiTokens;
+
     /**
      * Get the attributes that should be cast.
      *
