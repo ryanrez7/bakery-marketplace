@@ -36,7 +36,7 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
     /**
      * Get the attributes that should be cast.
      *
