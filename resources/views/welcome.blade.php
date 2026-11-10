@@ -20,7 +20,7 @@
                 
                 <div class="flex flex-col items-center text-center z-10 my-auto">
                     <h1 class="text-3xl font-bold tracking-wide mb-2">Backery Marketplace</h1>
-                    <p class="text-sm text-gray-300 mb-4">Panel Mitra & Admin</p>
+                    <p class="text-sm text-gray-300 mb-4">Outlet, User, dan Admin</p>
                     <p class="text-xs text-gray-400 max-w-xs leading-relaxed">
                         Kelola mitra, payout, dan komisi platform dalam satu tempat.
                     </p>
@@ -54,7 +54,7 @@
 
                                     @if (Route::has('register'))
                                         <a href="{{ route('register') }}" class="flex-1 py-3 px-4 border border-[#3D2C22] text-[#3D2C22] hover:bg-gray-50 font-medium rounded-lg text-center transition duration-200">
-                                            Daftar Mitra
+                                            Daftar
                                         </a>
                                     @endif
                                 </div>
