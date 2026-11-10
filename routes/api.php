@@ -7,6 +7,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-foreach (glob(__DIR__.'/api/*.php') as $filename) {
+foreach (glob(__DIR__.'/api/*.php') ?: [] as $filename) {
     require $filename;
 }
