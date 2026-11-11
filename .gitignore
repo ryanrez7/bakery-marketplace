@@ -1,0 +1,58 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Laravel Build & Assets
+/public/build/
+/public/hot
+/public/storage
+/public/fonts-manifest.dev.json
+
+# Environment & Local Configuration
+.env
+.env.backup
+.env.production
+.auth.json
+
+# IDE & Editor Files
+.idea/
+.vscode/
+.zed/
+.fleet/
+.nova/
+
+# Testing & Cache
+.phpunit.cache
+.phpunit.result.cache
+/storage/*.key
+/storage/pail
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+
+# Homestead & Local Dev Tools
+Homestead.json
+Homestead.yaml
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# AI / Assistant Configs (Opsional jika ingin disembunyikan)
+/.agents
+/.amp
+/.claude
+/.codex
+/.cursor
+/.factory
+/.grok
+/.junie
+/.kiro
+/.pi
+/.mcp.json
+/AGENTS.md
+/CLAUDE.md
+/boost.json
+/opencode.json
+/opencode.jsonc
