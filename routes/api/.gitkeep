@@ -1,0 +1,8 @@
+\App\Models\User::updateOrCreate(
+    ['email' => 'tester@bakery.test'],
+    [
+        'name' => 'Tester',
+        'password' => \Illuminate\Support\Facades\Hash::make('Test12345'),
+        'email_verified_at' => now(),
+    ]
+);
