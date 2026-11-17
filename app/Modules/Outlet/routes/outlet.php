@@ -5,6 +5,6 @@ use Illuminate\Support\Facades\Route;
 
 PortalRoutes::outlet(function () {
     Route::get('/dashboard', function () {
-        return view('outlet::dashboard');
+        return view('outlet::dashboard', ['outlet' => $outlet]);
     })->name('dashboard');
 });
