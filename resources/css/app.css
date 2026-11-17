@@ -72,3 +72,17 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+/* Palet warna sesuai desain Figma */
+@theme {
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+    --color-krem: #e8cdb0;
+    --color-krem-muda: #fbe9d3;
+    --color-cokelat: #4a3425;
+    --color-cokelat-tua: #5b3a24;
+    --color-input: #b0a595;
+}
+
+/* mencegah elemen Alpine berkedip sebelum JavaScript siap */
+[x-cloak] { display: none !important; }
