@@ -1,0 +1,167 @@
+/* ===== Dashboard (konten utama) ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #d9d9d9;
+  color: #4a3f3a;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.main {
+  margin-left: var(--sidebar-width, 206px);
+  padding: 26px 16px 40px;
+}
+
+/* ===== Search ===== */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 38px;
+  padding: 0 22px;
+  margin-bottom: 22px;
+  background: #ebebeb;
+  border-radius: 999px;
+}
+
+.search svg {
+  flex-shrink: 0;
+  color: #333;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  color: #4a3f3a;
+}
+
+.search input::placeholder {
+  color: #8a8a8a;
+}
+
+/* ===== Section ===== */
+.section {
+  margin-bottom: 18px;
+  background: #d4cfcd;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding: 0 14px 0 36px;
+  background: linear-gradient(90deg, #b9afa8 0%, #8a807a 70%, #5f5650 100%);
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #3b332f;
+}
+
+.see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  background: #cbc1ba;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  transition: filter 0.2s;
+}
+
+.see-all:hover {
+  filter: brightness(1.06);
+}
+
+/* ===== Grid & cards ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  padding: 16px 22px 20px;
+}
+
+.card {
+  min-width: 0;
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #b9afa8; /* tampil kalau gambar belum ada */
+  margin-bottom: 8px;
+}
+
+.card-name {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: #3b332f;
+}
+
+.card-price {
+  margin-top: 2px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #3b332f;
+}
+
+.card-shop {
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #3b332f;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    margin-left: 0;
+    padding: 16px 12px 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .section-head {
+    padding-left: 20px;
+  }
+
+  .section-title {
+    font-size: 17px;
+  }
+}

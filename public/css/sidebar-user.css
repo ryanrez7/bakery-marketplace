@@ -1,0 +1,94 @@
+/* ===== Sidebar ===== */
+:root {
+  --sidebar-bg: #b9afa8;
+  --sidebar-width: 206px;
+  --text-dark: #4a3f3a;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  border-right: 1px solid #8f857e;
+  /* Menggeser seluruh isi sidebar ke kanan (28px) dan dari atas (24px) */
+  padding: 24px 16px 24px 28px;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-dark);
+  z-index: 10;
+}
+
+/* Bagian Judul: Bakery Marketplace */
+.sidebar-header {
+  margin-bottom: 28px; /* Jarak antara Bakery Marketplace dan menu di bawahnya */
+}
+
+.sidebar-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #2b2623;
+  margin: 0;
+}
+
+/* Menghilangkan tanda titik (bullet) pada <ul> di dalam .sidebar-menu */
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Jarak antar item menu */
+}
+
+/* Styling tombol/link menu */
+.sidebar-menu a {
+  display: block;
+  padding: 8px 12px;
+  margin-left: -12px; /* Membuat kotak hover tetap sejajar dengan tulisan judul */
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.sidebar-menu a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.sidebar-menu a.active {
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Mobile: sidebar jadi bar atas */
+@media (max-width: 800px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    border-right: none;
+    padding: 16px 12px 12px;
+  }
+
+  .sidebar-header {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .sidebar-menu ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sidebar-menu a {
+    margin-left: 0;
+    padding: 8px 14px;
+    font-size: 14px;
+    border-radius: 999px;
+  }
+}
