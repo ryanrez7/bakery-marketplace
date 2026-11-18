@@ -24,11 +24,28 @@ class Bakery extends Model
         'Tegaldlimo', 'Tegalsari', 'Wongsorejo', 'Bangorejo', 'Blimbingsari',
     ];
 
+    public const BANK = [
+        'BCA', 'BRI', 'BNI', 'Mandiri', 'BSI', 'CIMB Niaga', 'Permata', 'Bank Jatim',
+    ];
+
     protected $fillable = [
-        'nama', 'slug', 'jenis_usaha', 'alamat', 'kecamatan', 'email', 'whatsapp',
+        'nama', 'slug', 'jenis_usaha', 'deskripsi',
+        'alamat', 'kecamatan', 'latitude', 'longitude',
+        'email', 'whatsapp',
+        'nama_bank', 'nomor_rekening', 'atas_nama_rekening',
         'status', 'alasan_penolakan',
         'ktp_path', 'izin_usaha_path', 'foto_toko_path', 'dokumen_lain_path',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'latitude'       => 'decimal:7',
+            'longitude'      => 'decimal:7',
+            // otomatis dienkripsi saat disimpan dan dibuka saat dibaca
+            'nomor_rekening' => 'encrypted',
+        ];
+    }
 
     public function users(): HasMany
     {

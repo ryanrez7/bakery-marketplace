@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\PasskeyUser;
 use Laravel\Fortify\PasskeyAuthenticatable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo; //[cite: 1]
 
 /**
  * @property int $id
@@ -27,6 +28,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
  * @property string|null $remember_token
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
+ * @property int|null $bakery_id
  */
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'two_factor_secret', 'two_factor_recovery_codes', 'remember_token'])]
@@ -34,6 +36,10 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
 {
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, PasskeyAuthenticatable, TwoFactorAuthenticatable;
+
+    // Added constants[cite: 1]
+    public const ROLE_MITRA_OWNER = 'mitra_owner';
+    public const ROLE_MITRA_KASIR = 'mitra_kasir';
 
     /**
      * Get the attributes that should be cast.
@@ -78,5 +84,11 @@ class User extends Authenticatable implements MustVerifyEmail, PasskeyUser
     public function isActive(): bool
     {
         return $this->status === 'active';
+    }
+
+    // Added bakery relationship[cite: 1]
+    public function bakery(): BelongsTo
+    {
+        return $this->belongsTo(Bakery::class);
     }
 }
