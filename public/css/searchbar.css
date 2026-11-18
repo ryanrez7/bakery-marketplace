@@ -1,0 +1,30 @@
+.search {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 38px;
+  padding: 0 22px;
+  margin-bottom: 22px;
+  background: #ebebeb;
+  border-radius: 999px;
+}
+
+.search svg {
+  flex-shrink: 0;
+  color: #333;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  color: #4a3f3a;
+}
+
+.search input::placeholder {
+  color: #8a8a8a;
+}

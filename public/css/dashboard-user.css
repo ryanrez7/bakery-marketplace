@@ -23,7 +23,7 @@ a {
 }
 
 /* ===== Search ===== */
-.search {
+/* .search {
   display: flex;
   align-items: center;
   gap: 18px;
@@ -52,7 +52,7 @@ a {
 
 .search input::placeholder {
   color: #8a8a8a;
-}
+} */
 
 /* ===== Section ===== */
 .section {
