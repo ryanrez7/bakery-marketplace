@@ -1,13 +1,12 @@
 <?php
 
 use App\Modules\User\Http\Controllers\UserDashboardController;
+use App\Modules\User\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
 
-Route::get('/menus', function () {
-    return 'Halaman Daftar Menu';
-})->name('menus.index');
+Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
 
 Route::get('/menus/{id}', function ($id) {
     return 'Detail Menu ID: '.$id;

@@ -22,7 +22,7 @@
         <circle cx="11" cy="11" r="7"></circle>
         <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
       </svg>
-      <input type="search" name="search" value="{{ request('search') }}" placeholder="Cari menu atau toko..." aria-label="Cari">
+      <input type="search" name="search" value="{{ request('search') }}" placeholder="Search..." aria-label="Cari">
     </form>
 
     <section class="section">
